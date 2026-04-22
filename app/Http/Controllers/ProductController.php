@@ -85,4 +85,8 @@ class ProductController extends Controller
         $products = Product::where("price", $product_max)->get();
         return view("product_max", compact("products"));
     }
+    public function product_category(){
+        $products = Product::where("category_id", 1)->get();
+        return view("product_category", compact("products"));
+    }
 }

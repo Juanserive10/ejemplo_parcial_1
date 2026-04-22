@@ -13,6 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             "precio_max" => App\Http\Middleware\Precio_max::class,
+            "product_category" => App\Http\Middleware\Product_category::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

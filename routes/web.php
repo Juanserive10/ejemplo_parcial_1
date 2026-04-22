@@ -24,7 +24,8 @@ Route::post("/products", [ProductController::class, "store"])->name("products.st
 Route::get("/products/{id}", [ProductController::class, "edit"])->name("products.edit");
 Route::delete("/products/{id}", [ProductController::class, "destroy"])->name("products.destroy");
 Route::put("/products/{id}", [ProductController::class, "update"])->name("products.update");
-Route::get("/precio_max", [ProductController::class, "precio_max"])->name("categories.precio_max")->middleware("precio_max");
+Route::get("/precio_max", [ProductController::class, "precio_max"])->name("products.precio_max")->middleware("precio_max");
+Route::get("/product_category", [ProductController::class, "product_category"])->name("products.product_category")->middleware("precio_max");
 
 //Rutas de Sale
 Route::get("/sales", [SaleController::class, "index"])->name("sales.index")->middleware("auth");
