@@ -79,4 +79,10 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route("products.index");
     }
+
+    public function precio_max(){
+        $product_max = Product::max("price");
+        $products = Product::where("price", $product_max)->get();
+        return view("product_max", compact("products"));
+    }
 }

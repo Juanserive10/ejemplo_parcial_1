@@ -17,12 +17,14 @@ Route::get("/categories/{id}", [CategoryController::class, "edit"])->name("categ
 Route::delete("/categories/{id}", [CategoryController::class, "destroy"])->name("categories.destroy");
 Route::put("/categories/{id}", [CategoryController::class, "update"])->name("categories.update");
 
+
 //Rutas de Product
 Route::get("/products", [ProductController::class, "index"])->name("products.index");
 Route::post("/products", [ProductController::class, "store"])->name("products.store");
 Route::get("/products/{id}", [ProductController::class, "edit"])->name("products.edit");
 Route::delete("/products/{id}", [ProductController::class, "destroy"])->name("products.destroy");
 Route::put("/products/{id}", [ProductController::class, "update"])->name("products.update");
+Route::get("/precio_max", [ProductController::class, "precio_max"])->name("categories.precio_max")->middleware("precio_max");
 
 //Rutas de Sale
 Route::get("/sales", [SaleController::class, "index"])->name("sales.index")->middleware("auth");
