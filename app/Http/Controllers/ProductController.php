@@ -73,6 +73,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        if($product->sale()->exists()){
+            return redirect()->route("products.index")->with("error", "No se puede eliminar una producto porque tiene ventas asociadas");
+        }
         $product->delete();
         return redirect()->route("products.index");
     }

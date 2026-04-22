@@ -16,6 +16,9 @@
         <button type="submit">Guardar Categoria</button>
     </form>
     <h1>Listado de Categorias</h1>
+    @if (@session("error"))
+        {{session("error")}}
+    @endif
     <table class = "table">
         <thead>
             <tr>
